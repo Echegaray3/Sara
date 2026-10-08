@@ -5,8 +5,7 @@ const CONFIG = {
   // Teléfono de WhatsApp de Sara: prefijo de país + número, sin + ni espacios.
   // Número real de Sara.
   whatsapp: "34610765097",
-  // TODO: cambiar por el usuario real de Instagram
-  instagram: "https://www.instagram.com/",
+  instagram: "https://www.instagram.com/saraserodio/",
   // Días mínimos de antelación para un encargo
   leadDays: 2,
 };
