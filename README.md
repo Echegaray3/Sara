@@ -11,7 +11,7 @@ python3 -m http.server 8000   # y abrir http://localhost:8000
 
 ## Qué hay que personalizar (todo en `js/main.js`, arriba del todo)
 
-- `CONFIG.whatsapp`: número de WhatsApp de Sara (formato `34600123456`). **Ahora es un número de ejemplo.**
+- `CONFIG.whatsapp`: número de WhatsApp de Sara (formato `34610765097`).
 - `CONFIG.instagram`: enlace a su Instagram.
 - `CONFIG.leadDays`: días mínimos de antelación para un encargo.
 - `PRODUCTS`: nombres, tamaños y **precios (ahora son orientativos/inventados)**.
