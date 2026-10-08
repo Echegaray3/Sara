@@ -3,8 +3,8 @@
    ========================================================= */
 const CONFIG = {
   // Teléfono de WhatsApp de Sara: prefijo de país + número, sin + ni espacios.
-  // TODO: cambiar por el número real (ahora es un ejemplo).
-  whatsapp: "34600000000",
+  // Número real de Sara.
+  whatsapp: "34610765097",
   // TODO: cambiar por el usuario real de Instagram
   instagram: "https://www.instagram.com/",
   // Días mínimos de antelación para un encargo
