@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Postres de Sara · Repostería casera en Alcoy</title>
+  <meta name="description" content="Tartas de queso, tarta de chocolate, banoffee y cookies hechas a mano por encargo en Alcoy. Pide por WhatsApp y recoge o recibe tu postre.">
+  <meta name="theme-color" content="#3b2418">
+  <meta property="og:title" content="Postres de Sara · Repostería casera en Alcoy">
+  <meta property="og:description" content="Postres hechos a mano por encargo en Alcoy.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/tarta-queso-pistacho.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Postres de Sara, inicio">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Postres de Sara</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#postres">Postres</a>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#sara">Sara</a>
+      <a href="#galeria">Galería</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn btn-small" href="#pedido">Hacer pedido</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Repostería casera · Alcoy</p>
+        <h1>Postres hechos a mano, <em>por encargo</em>.</h1>
+        <p class="lead">Tartas de queso, chocolate, banoffee y cookies. Cada postre lo cocina Sara en pequeñas tandas, para que llegue fresco a tu mesa.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#pedido">Hacer un pedido</a>
+          <a class="btn btn-ghost" href="#postres">Ver los postres</a>
+        </div>
+        <ul class="hero-points">
+          <li>Recetas caseras</li>
+          <li>Recogida o entrega en Alcoy</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img class="art-main" src="img/tarta-queso-pistacho.jpg" alt="">
+        <img class="art-a" src="img/banoffee-1.jpg" alt="">
+        <img class="art-b" src="img/cookies.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTRES -->
+  <section id="postres" class="section">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">La carta</p>
+        <h2>Lo que sale del horno de Sara</h2>
+        <p class="muted">Todo se prepara por encargo. Elige tamaño y fecha, y Sara se encarga del resto.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <img src="img/tarta-queso-pistacho.jpg" alt="Tarta de queso con crema de pistacho y pistachos troceados" loading="lazy">
+          <div class="card-body">
+            <h3>Tarta de queso y pistacho</h3>
+            <p>Tarta de queso horneada, cubierta de crema de pistacho y pistachos troceados.</p>
+            <div class="card-foot">
+              <span class="price" data-from="queso-pistacho"></span>
+              <button class="btn btn-small" data-order="queso-pistacho">Pedir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/tartas-queso-molde.jpg" alt="Tartas de queso recién horneadas en sus moldes, con la superficie tostada" loading="lazy">
+          <div class="card-body">
+            <h3>Tarta de queso al horno</h3>
+            <p>Cremosa por dentro y bien tostada por fuera. La clásica que nunca falla.</p>
+            <div class="card-foot">
+              <span class="price" data-from="queso"></span>
+              <button class="btn btn-small" data-order="queso">Pedir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/tarta-chocolate.jpg" alt="Tarta de chocolate con ganache y virutas de chocolate" loading="lazy" style="object-position:50% 60%">
+          <div class="card-body">
+            <h3>Tarta de chocolate</h3>
+            <p>Bizcocho de chocolate con ganache brillante y virutas por encima.</p>
+            <div class="card-foot">
+              <span class="price" data-from="chocolate"></span>
+              <button class="btn btn-small" data-order="chocolate">Pedir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/bundt-chocolate-2.jpg" alt="Bizcocho de chocolate en forma de corona, bañado y cubierto de fideos de chocolate" loading="lazy">
+          <div class="card-body">
+            <h3>Corona de chocolate</h3>
+            <p>Bizcocho esponjoso bañado en chocolate y cubierto de fideos. Para los muy chocolateros.</p>
+            <div class="card-foot">
+              <span class="price" data-from="corona"></span>
+              <button class="btn btn-small" data-order="corona">Pedir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/banoffee-2.jpg" alt="Porción de banoffee con toffee, plátano, nata y cacao" loading="lazy" style="object-position:50% 60%">
+          <div class="card-body">
+            <h3>Banoffee</h3>
+            <p>Base de galleta, toffee, plátano, nata montada y cacao. Un clásico británico con acento de Alcoy.</p>
+            <div class="card-foot">
+              <span class="price" data-from="banoffee"></span>
+              <button class="btn btn-small" data-order="banoffee">Pedir</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/cookies.jpg" alt="Cookies grandes con trozos de chocolate sobre una bandeja" loading="lazy" style="object-position:50% 35%">
+          <div class="card-body">
+            <h3>Cookies con trozos</h3>
+            <p>Cookies grandes con trozos de chocolate con leche y chocolate blanco.</p>
+            <div class="card-foot">
+              <span class="price" data-from="cookies"></span>
+              <button class="btn btn-small" data-order="cookies">Pedir</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section id="como-pedir" class="section tint">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Fácil y sin prisas</p>
+        <h2>Cómo pedir</h2>
+      </header>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <h3>Elige tu postre</h3>
+          <p>Mira la carta y rellena el formulario con tamaño, cantidad y fecha.</p>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <h3>Confirma por WhatsApp</h3>
+          <p>El formulario te abre WhatsApp con el pedido ya escrito. Sara te confirma disponibilidad y precio.</p>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <h3>Recoge o recibe</h3>
+          <p>Recoge tu postre en Alcoy o pide entrega a domicilio en la ciudad.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SARA -->
+  <section id="sara" class="section">
+    <div class="wrap about">
+      <div class="about-img">
+        <img src="img/sara.jpg" alt="Sara, la repostera de Alcoy" loading="lazy" style="object-position:50% 20%">
+      </div>
+      <div>
+        <p class="eyebrow">Quién cocina</p>
+        <h2>Detrás de cada postre está Sara</h2>
+        <p>Sara hornea en Alcoy tartas y dulces con receta propia, a mano y en pequeñas cantidades. Le gustan los sabores de siempre bien hechos: mucho chocolate, queso cremoso, caramelo y un toque de pistacho.</p>
+        <p>Cada encargo se prepara expresamente para ti, para que lo que llegue a tu mesa esté en su mejor momento.</p>
+        <ul class="tags">
+          <li>Hecho a mano</li>
+          <li>Por encargo</li>
+          <li>En Alcoy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section tint">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Del obrador a tu mesa</p>
+        <h2>Galería</h2>
+      </header>
+      <div class="gallery">
+        <button class="g g-tall" data-full="img/tarta-queso-pistacho.jpg" data-alt="Tarta de queso y pistacho"><img src="img/tarta-queso-pistacho.jpg" alt="Tarta de queso y pistacho" loading="lazy"></button>
+        <button class="g" data-full="img/bundt-chocolate-1.jpg" data-alt="Corona de chocolate"><img src="img/bundt-chocolate-1.jpg" alt="Corona de chocolate" loading="lazy"></button>
+        <button class="g" data-full="img/banoffee-1.jpg" data-alt="Banoffee"><img src="img/banoffee-1.jpg" alt="Porción de banoffee" loading="lazy"></button>
+        <button class="g g-tall" data-full="img/tarta-chocolate.jpg" data-alt="Tarta de chocolate"><img src="img/tarta-chocolate.jpg" alt="Tarta de chocolate" loading="lazy"></button>
+        <button class="g" data-full="img/tarta-queso-horno.jpg" data-alt="Tarta de queso al horno"><img src="img/tarta-queso-horno.jpg" alt="Tarta de queso al horno" loading="lazy"></button>
+        <button class="g" data-full="img/cookies.jpg" data-alt="Cookies con trozos de chocolate"><img src="img/cookies.jpg" alt="Cookies con trozos de chocolate" loading="lazy"></button>
+        <button class="g" data-full="img/tartas-queso-molde.jpg" data-alt="Tartas de queso recién horneadas"><img src="img/tartas-queso-molde.jpg" alt="Tartas de queso recién horneadas" loading="lazy"></button>
+        <button class="g" data-full="img/bundt-chocolate-2.jpg" data-alt="Corona de chocolate con fideos"><img src="img/bundt-chocolate-2.jpg" alt="Corona de chocolate con fideos" loading="lazy"></button>
+        <button class="g" data-full="img/banoffee-2.jpg" data-alt="Banoffee"><img src="img/banoffee-2.jpg" alt="Banoffee con cacao por encima" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDO -->
+  <section id="pedido" class="section">
+    <div class="wrap order">
+      <div class="order-intro">
+        <p class="eyebrow">Tu encargo</p>
+        <h2>Haz tu pedido</h2>
+        <p>Rellena el formulario y se abrirá WhatsApp con el mensaje listo para enviar a Sara. No pagas nada hasta que ella confirme tu pedido.</p>
+        <p class="muted small">Los precios son orientativos. Sara te confirmará el importe final por WhatsApp.</p>
+        <a class="wa-direct" data-wa-link href="#">O escríbele directamente por WhatsApp →</a>
+      </div>
+
+      <form id="order-form" class="form" novalidate>
+        <div class="field">
+          <label for="f-producto">Postre</label>
+          <select id="f-producto" required></select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-tamano">Tamaño</label>
+            <select id="f-tamano" required></select>
+          </div>
+          <div class="field field-small">
+            <label for="f-cantidad">Cantidad</label>
+            <input id="f-cantidad" type="number" min="1" max="20" value="1" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-fecha">Fecha de recogida / entrega</label>
+            <input id="f-fecha" type="date" required>
+            <small id="f-fecha-hint" class="hint"></small>
+          </div>
+          <div class="field">
+            <label for="f-entrega">Cómo lo quieres</label>
+            <select id="f-entrega">
+              <option>Recogida en Alcoy</option>
+              <option>Entrega a domicilio en Alcoy</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-notas">Notas <span class="muted">(alergias, dedicatoria…)</span></label>
+          <textarea id="f-notas" rows="3"></textarea>
+        </div>
+        <p class="total" aria-live="polite">Total orientativo: <strong id="f-total">–</strong></p>
+        <button class="btn btn-wa" type="submit">Enviar pedido por WhatsApp</button>
+        <p id="f-error" class="error" role="alert" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="preguntas" class="section tint">
+    <div class="wrap narrow">
+      <header class="section-head">
+        <p class="eyebrow">Dudas habituales</p>
+        <h2>Preguntas frecuentes</h2>
+      </header>
+      <details>
+        <summary>¿Con cuánta antelación tengo que pedir?</summary>
+        <p>Con al menos <span data-lead></span> días de antelación. Para fechas señaladas (cumpleaños, fiestas, Navidad) cuanto antes mejor, porque las plazas son limitadas.</p>
+      </details>
+      <details>
+        <summary>¿Dónde recojo o recibo mi pedido?</summary>
+        <p>Puedes recogerlo en Alcoy (Sara te dará el punto exacto al confirmar) o pedir entrega a domicilio dentro de la ciudad.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se paga?</summary>
+        <p>Se acuerda por WhatsApp al confirmar el pedido: efectivo, Bizum o transferencia.</p>
+      </details>
+      <details>
+        <summary>Tengo una alergia o intolerancia</summary>
+        <p>Cuéntaselo a Sara en las notas del pedido. Los postres se elaboran en una cocina donde hay chocolate, frutos secos (como pistacho), lácteos, huevo y gluten, así que no se pueden garantizar trazas.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto duran y cómo los conservo?</summary>
+        <p>Las tartas con nata o queso se guardan en nevera y están en su mejor punto durante los 3–4 primeros días. Las cookies y la corona de chocolate aguantan bien un par de días a temperatura ambiente, tapadas.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>
+      <p class="brand-foot">Postres de Sara</p>
+      <p class="muted-light">Repostería casera por encargo en Alcoy.</p>
+    </div>
+    <div class="foot-links">
+      <a data-wa-link href="#">WhatsApp</a>
+      <a data-ig-link href="#" rel="noopener" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <p class="wrap copy">© <span id="year">2026</span> Postres de Sara · Alcoy</p>
+</footer>
+
+<dialog id="lightbox" aria-label="Foto ampliada">
+  <form method="dialog"><button class="lb-close" aria-label="Cerrar">×</button></form>
+  <img alt="">
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
