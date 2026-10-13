@@ -25,9 +25,8 @@ formas de pago, punto de recogida) para que reflejen cómo trabaja realmente.
 index.html      página única
 css/styles.css  estilos
 js/main.js      configuración, formulario de pedido, galería
-js/logo.js      logo "SS" (se dibuja en SVG con los colores de la marca)
-img/            fotos de los postres
-favicon.svg
+img/            fotos de los postres y logo (logo.png)
+favicon.png
 ```
 
 ## Publicar

@@ -66,8 +66,7 @@ p { margin: 0 0 1em; }
 }
 .bar { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
 .brand { display: flex; align-items: center; gap: .6em; text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 1.2rem; color: var(--cocoa); }
-.brand-mark { display: block; height: 44px; line-height: 0; }
-.brand-mark svg { display: block; }
+.brand-mark { width: 46px; height: 46px; border-radius: 50%; }
 .nav { display: flex; align-items: center; gap: 1.5rem; }
 .nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: .95rem; }
 .nav a:not(.btn):hover { color: var(--caramel-dark); }
