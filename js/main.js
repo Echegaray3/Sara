@@ -32,6 +32,10 @@ const PRODUCTS = {
     name: "Banoffee",
     sizes: [["Entera (8 raciones)", 26], ["Porción individual", 4]],
   },
+  holandesa: {
+    name: "Tarta holandesa",
+    sizes: [["Entera (8 raciones)", 26], ["Porción individual", 4]],
+  },
   cookies: {
     name: "Cookies con trozos",
     sizes: [["Caja de 4", 10], ["Caja de 6", 14]],
