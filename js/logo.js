@@ -11,29 +11,29 @@
   // Cintas de una S, en una caja de ~46 x 66. Cada una: tramos Bézier cúbicos
   // [x0,y0, c1x,c1y, c2x,c2y, x1,y1] encadenados + ancho [t, ancho] (t de 0 a 1).
   const SWASH = {
-    // Cinta clara: lágrima arriba a la derecha, vuelta por arriba y diagonal central
+    // Cinta clara: lágrima arriba a la derecha, vuelta por dentro del arco superior y diagonal central
     light: {
       segs: [
-        [44, 25, 47, 12, 42, 4, 31, 5],
-        [31, 5, 22, 5, 13, 8, 12, 17],
-        [12, 16, 10, 27, 24, 32, 36, 44],
+        [38, 21, 41, 14, 38, 5, 28, 4.5],
+        [28, 4.5, 18, 4, 12, 9, 12, 17],
+        [12, 17, 12, 27, 34, 33, 34, 42],
       ],
-      width: [[0, 0.2], [0.1, 7], [0.24, 6.2], [0.42, 2.4], [0.62, 6.5], [0.8, 7], [1, 0]],
+      width: [[0, 0.2], [0.1, 7], [0.25, 6], [0.42, 2.4], [0.62, 6.5], [0.82, 6.5], [1, 0]],
     },
-    // Cinta oscura: fina por fuera, gruesa en la curva de abajo y rematada en espiral
+    // Cinta oscura: la S completa y simétrica, fina arriba, gruesa abajo y con espiral
     dark: {
       segs: [
-        [20, 2.5, 8, 3, 3, 12, 4, 22],
-        [4, 22, 5, 34, 30, 36, 38, 48],
-        [38, 48, 46, 58, 32, 66, 20, 64],
-        [20, 64, 8, 62, 2, 52, 8, 48],
-        [8, 48, 14, 43, 22, 48, 19, 54],
+        [36, 6, 28, 0.5, 10, 1, 7, 15],
+        [7, 15, 5, 28, 39, 36, 39, 50],
+        [39, 50, 39, 64, 11, 66, 6, 54],
+        [6, 54, 3, 47, 12, 41, 17, 46],
+        [17, 46, 20, 50, 14, 54, 13, 50],
       ],
-      width: [[0, 0.3], [0.1, 1.8], [0.2, 2.2], [0.35, 2.4], [0.5, 4.5], [0.6, 7], [0.7, 6], [0.8, 3.5], [0.9, 2], [1, 2.6]],
+      width: [[0, 0.2], [0.1, 1.8], [0.2, 2.2], [0.35, 3.2], [0.5, 4.6], [0.6, 7], [0.7, 6.5], [0.8, 3.4], [0.9, 2.2], [1, 2.8]],
     },
     // Media luna interior
     accent: {
-      segs: [[8, 57, 3, 49, 10, 43, 18, 45]],
+      segs: [[9, 57, 3, 50, 9, 43, 17, 46]],
       width: [[0, 0], [0.5, 2.6], [1, 0]],
     },
   };
@@ -110,14 +110,14 @@
       el("path", { d: ribbon(SWASH.dark), fill: `url(#${id}-cocoa)` }, g);
       el("path", { d: ribbon(SWASH.light), fill: `url(#${id}-${light})` }, g);
       el("path", { d: ribbon(SWASH.accent), fill: "#e9b9a8" }, g);
-      el("circle", { cx: 19, cy: 54, r: 1.9, fill: "#46261a" }, g);
+      el("circle", { cx: 13, cy: 50, r: 1.9, fill: "#46261a" }, g);
       return g;
     };
 
     // S izquierda (oro) con espiga y hoja
     const left = drawS(7, "gold");
-    const wheat = el("g", { transform: "translate(28 19) rotate(-38) scale(.85)" }, left);
-    el("path", { d: "M0 20L0 -9", stroke: "#b98a3c", "stroke-width": 0.9, "stroke-linecap": "round", fill: "none" }, wheat);
+    const wheat = el("g", { transform: "translate(27 22) rotate(-38) scale(.85)" }, left);
+    el("path", { d: "M0 12L0 -9", stroke: "#b98a3c", "stroke-width": 0.9, "stroke-linecap": "round", fill: "none" }, wheat);
     for (let i = 0; i < 5; i++) {
       [-1, 1].forEach((side) =>
         el("ellipse", { cx: side * 2.1, cy: -8 + i * 3.1 + (side > 0 ? 1.2 : 0), rx: 1, ry: 2.4, fill: "#d2a24a",
@@ -129,8 +129,8 @@
 
     // S derecha (rosa) con batidor
     const right = drawS(47, "rose");
-    const whisk = el("g", { transform: "translate(29 21) rotate(-35) scale(.85)", fill: "none", stroke: "#a96e5a", "stroke-linecap": "round" }, right);
-    el("path", { d: "M0 6L0 19", "stroke-width": 1.4 }, whisk);
+    const whisk = el("g", { transform: "translate(27 23) rotate(-35) scale(.85)", fill: "none", stroke: "#a96e5a", "stroke-linecap": "round" }, right);
+    el("path", { d: "M0 6L0 13", "stroke-width": 1.4 }, whisk);
     [-3.2, -1.6, 0, 1.6, 3.2].forEach((x) =>
       el("path", { d: `M0 6C${x * 2.2} 2 ${x * 2.2} -8 0 -11C${-x * 0} -8 ${x * 0} 2 0 6`, "stroke-width": 0.7, transform: `scale(${x ? 1 : 1})` }, whisk));
     el("ellipse", { cx: 0, cy: -2.5, rx: 5.2, ry: 8.6, "stroke-width": 0.7 }, whisk);
