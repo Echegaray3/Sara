@@ -1,4 +1,4 @@
-# Postres de Sara · Alcoy
+# El horno de Sara · Alcoy
 
 Web estática (HTML + CSS + JS, sin dependencias) para vender los postres caseros de Sara en Alcoy.
 Los pedidos se envían por WhatsApp con el mensaje ya redactado.
@@ -25,6 +25,7 @@ formas de pago, punto de recogida) para que reflejen cómo trabaja realmente.
 index.html      página única
 css/styles.css  estilos
 js/main.js      configuración, formulario de pedido, galería
+js/logo.js      logo "SS" (se dibuja en SVG con los colores de la marca)
 img/            fotos de los postres
 favicon.svg
 ```
