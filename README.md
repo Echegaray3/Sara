@@ -14,7 +14,7 @@ python3 -m http.server 8000   # y abrir http://localhost:8000
 - `CONFIG.whatsapp`: número de WhatsApp de Sara (formato `34610765097`).
 - `CONFIG.instagram`: enlace a su Instagram.
 - `CONFIG.leadDays`: días mínimos de antelación para un encargo.
-- `PRODUCTS`: nombres, tamaños y **precios (ahora son orientativos/inventados)**.
+- `PRODUCTS`: nombres y tamaños. La web no muestra precios: Sara los confirma por WhatsApp.
 
 Además, revisar los textos de `index.html` (sección "Sara", preguntas frecuentes, conservación,
 formas de pago, punto de recogida) para que reflejen cómo trabaja realmente.

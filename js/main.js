@@ -10,35 +10,35 @@ const CONFIG = {
   leadDays: 2,
 };
 
-// Precios orientativos en euros. TODO: sustituir por los precios reales de Sara.
+// Postres y tamaños del formulario. La web no muestra precios: Sara los confirma por WhatsApp.
 const PRODUCTS = {
   "queso-pistacho": {
     name: "Tarta de queso y pistacho",
-    sizes: [["Pequeña (6–8 raciones)", 24], ["Grande (10–12 raciones)", 34]],
+    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
   },
   queso: {
     name: "Tarta de queso al horno",
-    sizes: [["Pequeña (6–8 raciones)", 20], ["Grande (10–12 raciones)", 30]],
+    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
   },
   chocolate: {
     name: "Tarta de chocolate",
-    sizes: [["Pequeña (6–8 raciones)", 22], ["Grande (10–12 raciones)", 32]],
+    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
   },
   corona: {
     name: "Corona de chocolate",
-    sizes: [["Entera (10–12 raciones)", 22]],
+    sizes: ["Entera (10–12 raciones)"],
   },
   banoffee: {
     name: "Banoffee",
-    sizes: [["Entera (8 raciones)", 26], ["Porción individual", 4]],
+    sizes: ["Entera (8 raciones)", "Porción individual"],
   },
   holandesa: {
     name: "Tarta holandesa",
-    sizes: [["Entera (8 raciones)", 26], ["Porción individual", 4]],
+    sizes: ["Entera (8 raciones)", "Porción individual"],
   },
   cookies: {
     name: "Cookies con trozos",
-    sizes: [["Caja de 4", 10], ["Caja de 6", 14]],
+    sizes: ["Caja de 4", "Caja de 6"],
   },
 };
 
@@ -46,7 +46,6 @@ const PRODUCTS = {
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const euro = (n) => n.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: n % 1 ? 2 : 0 });
 const waBase = `https://wa.me/${CONFIG.whatsapp}`;
 
 // Enlaces generales
@@ -58,12 +57,6 @@ $$("[data-wa-link]").forEach((a) => {
 $$("[data-ig-link]").forEach((a) => (a.href = CONFIG.instagram));
 $$("[data-lead]").forEach((el) => (el.textContent = CONFIG.leadDays));
 $("#year").textContent = new Date().getFullYear();
-
-// Precio "desde" en las tarjetas
-$$("[data-from]").forEach((el) => {
-  const p = PRODUCTS[el.dataset.from];
-  if (p) el.textContent = `Desde ${euro(Math.min(...p.sizes.map((s) => s[1])))}`;
-});
 
 // Menú móvil
 const toggle = $(".nav-toggle");
@@ -85,7 +78,6 @@ const fProducto = $("#f-producto");
 const fTamano = $("#f-tamano");
 const fCantidad = $("#f-cantidad");
 const fFecha = $("#f-fecha");
-const fTotal = $("#f-total");
 const fError = $("#f-error");
 
 fProducto.innerHTML = Object.entries(PRODUCTS)
@@ -94,18 +86,9 @@ fProducto.innerHTML = Object.entries(PRODUCTS)
 
 function fillSizes() {
   const p = PRODUCTS[fProducto.value];
-  fTamano.innerHTML = p.sizes.map(([label, price], i) => `<option value="${i}">${label} · ${euro(price)}</option>`).join("");
-  updateTotal();
-}
-function updateTotal() {
-  const p = PRODUCTS[fProducto.value];
-  const price = p.sizes[+fTamano.value]?.[1] ?? 0;
-  const qty = Math.max(1, parseInt(fCantidad.value, 10) || 1);
-  fTotal.textContent = euro(price * qty);
+  fTamano.innerHTML = p.sizes.map((label, i) => `<option value="${i}">${label}</option>`).join("");
 }
 fProducto.addEventListener("change", fillSizes);
-fTamano.addEventListener("change", updateTotal);
-fCantidad.addEventListener("input", updateTotal);
 fillSizes();
 
 // Fecha mínima = hoy + antelación
@@ -141,7 +124,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
   const p = PRODUCTS[fProducto.value];
-  const [sizeLabel, price] = p.sizes[+fTamano.value];
+  const sizeLabel = p.sizes[+fTamano.value];
   const qty = Math.max(1, parseInt(fCantidad.value, 10) || 1);
   const [y, m, d] = fFecha.value.split("-");
   const notas = $("#f-notas").value.trim();
@@ -152,7 +135,6 @@ form.addEventListener("submit", (e) => {
     `• ${qty} × ${p.name} — ${sizeLabel}`,
     `• Fecha: ${d}/${m}/${y}`,
     `• ${$("#f-entrega").value}`,
-    `• Total orientativo: ${euro(price * qty)}`,
     notas ? `• Notas: ${notas}` : null,
     "",
     `Mi nombre: ${nombre}`,
