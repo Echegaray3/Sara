@@ -40,6 +40,10 @@ const PRODUCTS = {
     name: "Cookies con trozos",
     sizes: ["Caja de 4", "Caja de 6"],
   },
+  "pan-queso": {
+    name: "Pan de queso",
+    sizes: ["Bolsa de 10 unidades"],
+  },
 };
 
 /* ========================================================= */
