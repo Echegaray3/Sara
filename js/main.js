@@ -14,15 +14,15 @@ const CONFIG = {
 const PRODUCTS = {
   queso: {
     name: "Tarta de queso al horno",
-    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
+    sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
   },
   corona: {
     name: "Corona de chocolate",
-    sizes: ["Entera (10–12 raciones)"],
+    sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
   },
   banoffee: {
     name: "Banoffee",
-    sizes: ["Entera (8 raciones)", "Porción individual"],
+    sizes: ["Media (4 raciones)", "Entera (8 raciones)"],
   },
   "pan-queso": {
     name: "Pan de queso",
