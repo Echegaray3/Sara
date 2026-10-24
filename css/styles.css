@@ -93,7 +93,7 @@ p { margin: 0 0 1em; }
 .section-head { max-width: 640px; margin-bottom: 2.4rem; }
 
 /* Cards */
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
 .card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform .2s ease; }
 .card:hover { transform: translateY(-4px); }
 .card img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; }

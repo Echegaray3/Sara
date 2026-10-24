@@ -12,16 +12,8 @@ const CONFIG = {
 
 // Postres y tamaños del formulario. La web no muestra precios: Sara los confirma por WhatsApp.
 const PRODUCTS = {
-  "queso-pistacho": {
-    name: "Tarta de queso y pistacho",
-    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
-  },
   queso: {
     name: "Tarta de queso al horno",
-    sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
-  },
-  chocolate: {
-    name: "Tarta de chocolate",
     sizes: ["Pequeña (6–8 raciones)", "Grande (10–12 raciones)"],
   },
   corona: {
@@ -31,14 +23,6 @@ const PRODUCTS = {
   banoffee: {
     name: "Banoffee",
     sizes: ["Entera (8 raciones)", "Porción individual"],
-  },
-  holandesa: {
-    name: "Tarta holandesa",
-    sizes: ["Entera (8 raciones)", "Porción individual"],
-  },
-  cookies: {
-    name: "Cookies con trozos",
-    sizes: ["Caja de 4", "Caja de 6"],
   },
   "pan-queso": {
     name: "Pan de queso",
