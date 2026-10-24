@@ -16,8 +16,8 @@ const PRODUCTS = {
     name: "Tarta de queso al horno",
     sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
   },
-  corona: {
-    name: "Corona de chocolate",
+  torta: {
+    name: "Torta de chocolate",
     sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
   },
   banoffee: {
