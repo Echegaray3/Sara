@@ -99,6 +99,10 @@ p { margin: 0 0 1em; }
 .card img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; }
 .card-body { padding: 1.2rem 1.3rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
 .card-body p { color: var(--muted); font-size: .95rem; flex: 1; }
+.prices { list-style: none; padding: 0; margin: 0 0 1.1rem; border-top: 1px solid var(--line); }
+.prices li { display: flex; justify-content: space-between; gap: 1rem; padding: .45em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; color: var(--choc); }
+.prices strong { color: var(--cocoa); white-space: nowrap; }
+.total { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--cocoa); margin: .2rem 0 1rem; }
 .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 
 /* Steps */
