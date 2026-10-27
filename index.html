@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-24b">
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-27">
 </head>
 <body>
 
@@ -105,6 +105,7 @@
           <div class="card-body">
             <h3>Tarta de queso al horno</h3>
             <p>Cremosa por dentro y bien tostada por fuera. La clásica que nunca falla.</p>
+            <ul class="prices" data-prices="queso"></ul>
             <div class="card-foot">
               <button class="btn btn-small" data-order="queso">Pedir</button>
             </div>
@@ -116,6 +117,7 @@
           <div class="card-body">
             <h3>Torta de chocolate</h3>
             <p>Bizcocho esponjoso de chocolate, cubierto de ganache y chocolate rallado. Para los muy chocolateros.</p>
+            <ul class="prices" data-prices="torta"></ul>
             <div class="card-foot">
               <button class="btn btn-small" data-order="torta">Pedir</button>
             </div>
@@ -127,6 +129,7 @@
           <div class="card-body">
             <h3>Banoffee</h3>
             <p>Base de galleta, toffee, plátano, nata montada y cacao. Al estilo brasileño, con acento de Alcoy.</p>
+            <ul class="prices" data-prices="banoffee"></ul>
             <div class="card-foot">
               <button class="btn btn-small" data-order="banoffee">Pedir</button>
             </div>
@@ -137,7 +140,8 @@
           <img src="img/pan-de-queso-1.jpg" alt="Panes de queso recién horneados sobre papel de horno, dorados y con la corteza tostada" loading="lazy">
           <div class="card-body">
             <h3>Pan de queso</h3>
-            <p>El clásico bocado brasileño: dorado por fuera, tierno y con mucho queso por dentro. Se vende en bolsas de 10 unidades.</p>
+            <p>El clásico bocado brasileño: dorado por fuera, tierno y con mucho queso por dentro. Bolsas de 10 unidades, congeladas para hornear en casa o ya horneadas.</p>
+            <ul class="prices" data-prices="pan-queso"></ul>
             <div class="card-foot">
               <button class="btn btn-small" data-order="pan-queso">Pedir</button>
             </div>
@@ -158,12 +162,12 @@
         <li>
           <span class="step-n">1</span>
           <h3>Elige tu postre</h3>
-          <p>Mira la carta y rellena el formulario con tamaño, cantidad y fecha.</p>
+          <p>Mira la carta y los precios, y rellena el formulario con tamaño, cantidad y fecha.</p>
         </li>
         <li>
           <span class="step-n">2</span>
           <h3>Confirma por WhatsApp</h3>
-          <p>El formulario te abre WhatsApp con el pedido ya escrito. Sara te confirma disponibilidad y precio.</p>
+          <p>El formulario te abre WhatsApp con el pedido ya escrito. Sara te confirma la disponibilidad.</p>
         </li>
         <li>
           <span class="step-n">3</span>
@@ -222,7 +226,6 @@
         <p class="eyebrow">Tu encargo</p>
         <h2>Haz tu pedido</h2>
         <p>Rellena el formulario y se abrirá WhatsApp con el mensaje listo para enviar a Sara. No pagas nada hasta que ella confirme tu pedido.</p>
-        <p class="muted small">Sara te confirmará el precio por WhatsApp.</p>
         <a class="wa-direct" data-wa-link href="#">O escríbele directamente por WhatsApp →</a>
       </div>
 
@@ -263,6 +266,7 @@
           <label for="f-notas">Notas <span class="muted">(alergias, dedicatoria…)</span></label>
           <textarea id="f-notas" rows="3"></textarea>
         </div>
+        <p id="f-total" class="total" aria-live="polite"></p>
         <button class="btn btn-wa" type="submit">Enviar pedido por WhatsApp</button>
         <p id="f-error" class="error" role="alert" hidden></p>
       </form>
@@ -320,6 +324,6 @@
   <img alt="">
 </dialog>
 
-<script src="js/main.js?v=2026-10-24b"></script>
+<script src="js/main.js?v=2026-10-27"></script>
 </body>
 </html>

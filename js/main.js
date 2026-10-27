@@ -10,23 +10,35 @@ const CONFIG = {
   leadDays: 2,
 };
 
-// Postres y tamaños del formulario. La web no muestra precios: Sara los confirma por WhatsApp.
+// Postres, tamaños y precios (en euros). Se muestran en la carta y en el formulario.
 const PRODUCTS = {
   queso: {
     name: "Tarta de queso al horno",
-    sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
+    sizes: [
+      { label: "17 cm", price: 24 },
+      { label: "22,5 cm", price: 35 },
+    ],
   },
   torta: {
     name: "Torta de chocolate",
-    sizes: ["Media (5–6 raciones)", "Entera (10–12 raciones)"],
+    sizes: [
+      { label: "17 cm", price: 28 },
+      { label: "22,5 cm", price: 37 },
+    ],
   },
   banoffee: {
     name: "Banoffee",
-    sizes: ["Media (4 raciones)", "Entera (8 raciones)"],
+    sizes: [
+      { label: "17 cm", price: 22 },
+      { label: "22,5 cm", price: 32 },
+    ],
   },
   "pan-queso": {
     name: "Pan de queso",
-    sizes: ["Bolsa de 10 unidades"],
+    sizes: [
+      { label: "10 unidades congeladas (500 g)", price: 7 },
+      { label: "10 unidades horneadas", price: 9 },
+    ],
   },
 };
 
@@ -45,6 +57,14 @@ $$("[data-wa-link]").forEach((a) => {
 $$("[data-ig-link]").forEach((a) => (a.href = CONFIG.instagram));
 $$("[data-lead]").forEach((el) => (el.textContent = CONFIG.leadDays));
 $("#year").textContent = new Date().getFullYear();
+
+// Precios en la carta
+const euros = (n) => `${n.toLocaleString("es-ES")} €`;
+$$("[data-prices]").forEach((ul) => {
+  ul.innerHTML = PRODUCTS[ul.dataset.prices].sizes
+    .map((s) => `<li><span>${s.label}</span><strong>${euros(s.price)}</strong></li>`)
+    .join("");
+});
 
 // Menú móvil
 const toggle = $(".nav-toggle");
@@ -67,6 +87,7 @@ const fTamano = $("#f-tamano");
 const fCantidad = $("#f-cantidad");
 const fFecha = $("#f-fecha");
 const fError = $("#f-error");
+const fTotal = $("#f-total");
 
 fProducto.innerHTML = Object.entries(PRODUCTS)
   .map(([id, p]) => `<option value="${id}">${p.name}</option>`)
@@ -74,9 +95,20 @@ fProducto.innerHTML = Object.entries(PRODUCTS)
 
 function fillSizes() {
   const p = PRODUCTS[fProducto.value];
-  fTamano.innerHTML = p.sizes.map((label, i) => `<option value="${i}">${label}</option>`).join("");
+  fTamano.innerHTML = p.sizes
+    .map((s, i) => `<option value="${i}">${s.label} — ${euros(s.price)}</option>`)
+    .join("");
+  updateTotal();
+}
+
+const qtyValue = () => Math.max(1, parseInt(fCantidad.value, 10) || 1);
+const orderTotal = () => PRODUCTS[fProducto.value].sizes[+fTamano.value].price * qtyValue();
+function updateTotal() {
+  fTotal.textContent = `Total: ${euros(orderTotal())}`;
 }
 fProducto.addEventListener("change", fillSizes);
+fTamano.addEventListener("change", updateTotal);
+fCantidad.addEventListener("input", updateTotal);
 fillSizes();
 
 // Fecha mínima = hoy + antelación
@@ -112,15 +144,16 @@ form.addEventListener("submit", (e) => {
     return;
   }
   const p = PRODUCTS[fProducto.value];
-  const sizeLabel = p.sizes[+fTamano.value];
-  const qty = Math.max(1, parseInt(fCantidad.value, 10) || 1);
+  const size = p.sizes[+fTamano.value];
+  const qty = qtyValue();
   const [y, m, d] = fFecha.value.split("-");
   const notas = $("#f-notas").value.trim();
 
   const msg = [
     "¡Hola Sara! Quiero hacer un encargo:",
     "",
-    `• ${qty} × ${p.name} — ${sizeLabel}`,
+    `• ${qty} × ${p.name} — ${size.label} (${euros(size.price)})`,
+    `• Total: ${euros(orderTotal())}`,
     `• Fecha: ${d}/${m}/${y}`,
     `• ${$("#f-entrega").value}`,
     notas ? `• Notas: ${notas}` : null,
